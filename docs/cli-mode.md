@@ -86,9 +86,9 @@ Example configurations:
 ```
 {
    "SERVER_URL" : "https://localhost:9443",
-   "CLIENT-ID" : "********",
-   "CLIENT-SECRET" : "********",
-   "TENANT-DOMAIN" : "carbon.super"
+   "CLIENT_ID" : "********",
+   "CLIENT_SECRET" : "********",
+   "TENANT_DOMAIN" : "carbon.super"
 }
 ```
 > **Note:** The CLI tool uses management rest apis of the IS to export and import resources. In order to perform these API requests, the client ID and client secret of a management application is required.
