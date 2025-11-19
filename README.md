@@ -111,9 +111,9 @@ Example configurations:
 ```
     {
        "SERVER_URL" : "https://localhost:9443",
-       "CLIENT-ID" : "********",
-       "CLIENT-SECRET" : "********",
-       "TENANT-DOMAIN" : "carbon.super"
+       "CLIENT_ID" : "********",
+       "CLIENT_SECRET" : "********",
+       "TENANT_DOMAIN" : "carbon.super"
     }
 ```
 
@@ -122,9 +122,9 @@ Example configurations:
 ```
     {
        "SERVER_URL" : "https://localhost:9443",
-       "CLIENT-ID" : "********",
-       "CLIENT-SECRET" : "********",
-       "TENANT-DOMAIN" : "carbon.super",
+       "CLIENT_ID" : "********",
+       "CLIENT_SECRET" : "********",
+       "TENANT_DOMAIN" : "carbon.super",
        "ORGANIZATION": "b833d7de-264c-4c4e-8d52-61f9c57e84ca"
     }
 ```
