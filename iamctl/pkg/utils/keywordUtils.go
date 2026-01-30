@@ -151,6 +151,8 @@ func GetArrayIdentifiers(resourceType string) map[string]string {
 		return userStoreArrayIdentifiers
 	case CLAIMS:
 		return claimArrayIdentifiers
+	case OIDC_SCOPES:
+		return make(map[string]string)
 	}
 	return make(map[string]string)
 }
