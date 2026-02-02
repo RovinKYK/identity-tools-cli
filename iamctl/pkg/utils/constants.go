@@ -15,7 +15,7 @@
 * specific language governing permissions and limitations
 * under the License.
  */
- 
+
 package utils
 
 // Resource type configs
@@ -23,6 +23,7 @@ const APPLICATIONS_CONFIG = "APPLICATIONS"
 const IDP_CONFIG = "IDENTITY_PROVIDERS"
 const CLAIM_CONFIG = "CLAIMS"
 const USERSTORES_CONFIG = "USERSTORES"
+const OIDC_SCOPES_CONFIG = "OIDC_SCOPES"
 
 // Tool configs
 const EXCLUDE_CONFIG = "EXCLUDE"
@@ -48,6 +49,7 @@ const APPLICATIONS = "Applications"
 const IDENTITY_PROVIDERS = "IdentityProviders"
 const CLAIMS = "Claims"
 const USERSTORES = "UserStores"
+const OIDC_SCOPES = "OidcScopes"
 
 // Config file names
 const SERVER_CONFIG_FILE = "serverConfig.json"
