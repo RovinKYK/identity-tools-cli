@@ -32,9 +32,10 @@ import (
 //   - Version is not configured (backward compatibility - version checking disabled)
 //   - Configured version >= minimum required version for the resource type
 //   - No version requirement is defined for the resource type
+//   - Configured version format is invalid
 func IsEntitySupportedInVersion(resourceType string) bool {
 
-	if SERVER_CONFIGS.Version == "" {
+	if SERVER_CONFIGS.ServerVersion == "" {
 		return true
 	}
 	minVersion, exists := configs.EntityVersionRequirements[resourceType]
@@ -42,10 +43,10 @@ func IsEntitySupportedInVersion(resourceType string) bool {
 		return true
 	}
 
-	comparison, err := CompareVersions(SERVER_CONFIGS.Version, minVersion)
+	comparison, err := CompareVersions(SERVER_CONFIGS.ServerVersion, minVersion)
 	if err != nil {
-		log.Printf("Warning: Invalid version format. Configured: %s, Required: %s",
-			SERVER_CONFIGS.Version, minVersion)
+		log.Printf("Warning: Invalid version format. Configured: %s",
+			SERVER_CONFIGS.ServerVersion)
 		return true
 	}
 

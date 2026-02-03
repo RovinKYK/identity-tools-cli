@@ -126,9 +126,9 @@ func TestParseVersion(t *testing.T) {
 
 func TestIsEntitySupportedInVersion(t *testing.T) {
 	// Save original version config
-	originalVersion := utils.SERVER_CONFIGS.Version
+	originalVersion := utils.SERVER_CONFIGS.ServerVersion
 	defer func() {
-		utils.SERVER_CONFIGS.Version = originalVersion
+		utils.SERVER_CONFIGS.ServerVersion = originalVersion
 	}()
 
 	tests := []struct {
@@ -146,7 +146,7 @@ func TestIsEntitySupportedInVersion(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			utils.SERVER_CONFIGS.Version = tt.version
+			utils.SERVER_CONFIGS.ServerVersion = tt.version
 			result := utils.IsEntitySupportedInVersion(tt.resourceType)
 
 			if result != tt.expected {
