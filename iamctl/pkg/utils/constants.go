@@ -63,6 +63,8 @@ const (
 	EMAIL_TEMPLATES       ResourceType = "EmailTemplates"
 	SCRIPT_LIBRARIES      ResourceType = "ScriptLibraries"
 	GOVERNANCE_CONNECTORS ResourceType = "GovernanceConnectors"
+	CONSENT_PURPOSES      ResourceType = "ConsentPurposes"
+	PII_CATEGORIES        ResourceType = "PiiCategories"
 )
 
 // Config file names
