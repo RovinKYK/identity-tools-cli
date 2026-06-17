@@ -227,6 +227,7 @@ func importAppWithCRUD(appName string, appMap map[string]interface{}) (string, e
 	if err := removeAssociatedApplicationRoles(appMap); err != nil {
 		return "", fmt.Errorf("error removing associated application roles: %w", err)
 	}
+	removeEmptyOutboundProvisioningIdps(appMap)
 
 	body, err := json.Marshal(appMap)
 	if err != nil {
@@ -334,6 +335,7 @@ func patchApplication(appId string, appMap map[string]interface{}) error {
 	if err := removeRoleClaimUri(appMap); err != nil {
 		return fmt.Errorf("error clearing role claim uri: %w", err)
 	}
+	removeEmptyOutboundProvisioningIdps(appMap)
 
 	body, err := json.Marshal(appMap)
 	if err != nil {

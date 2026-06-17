@@ -475,6 +475,7 @@ func filterAssociatedApplicationRoles(appMap map[string]interface{}) error {
 	}
 	rolesRaw, exists := assocRoles["roles"]
 	if !exists {
+		assocRoles["roles"] = []interface{}{}
 		return nil
 	}
 	rolesList, ok := rolesRaw.([]interface{})
@@ -513,7 +514,7 @@ func removeAssociatedApplicationRoles(appMap map[string]interface{}) error {
 	if !ok {
 		return fmt.Errorf("unexpected format for associatedRoles")
 	}
-	delete(assocRoles, "roles")
+	assocRoles["roles"] = []interface{}{}
 	return nil
 }
 
@@ -525,6 +526,21 @@ func removeAdditionalSpProperties(appMap map[string]interface{}) error {
 	}
 	delete(advConf, "additionalSpProperties")
 	return nil
+}
+
+func removeEmptyOutboundProvisioningIdps(appMap map[string]interface{}) {
+
+	provConf, ok := appMap["provisioningConfigurations"].(map[string]interface{})
+	if !ok {
+		return
+	}
+	idps, ok := provConf["outboundProvisioningIdps"].([]interface{})
+	if ok && len(idps) == 0 {
+		delete(provConf, "outboundProvisioningIdps")
+		if len(provConf) == 0 {
+			delete(appMap, "provisioningConfigurations")
+		}
+	}
 }
 
 func InitDeployedRoleIds() error {
